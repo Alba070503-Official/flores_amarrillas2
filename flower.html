@@ -9,7 +9,7 @@
     <title>Flower</title>
   </head>
   <body class="container">
-    <audio src="sound/ChristianBasso&HaienQiu-Flowers.mp3" autoplay></audio>
+    <audio id="song" src="sound/ChristianBasso&HaienQiu-Flowers.mp3" autoplay muted></audio>
     <div id="lyrics">
      
     </div>
@@ -355,5 +355,19 @@
     </div>
     <script src="anim.js"></script>
     <script src="main.js"></script>
+    <script>
+  window.addEventListener("load", () => {
+    const audio = document.getElementById("song");
+    audio.muted = true;    // arranca muteado (el navegador lo permite)
+    audio.play().then(() => {
+      setTimeout(() => {
+        audio.muted = false; // después de arrancar, le quitamos el mute
+      }, 200); // pequeño delay para asegurar que empezó
+    }).catch(err => {
+      console.log("El navegador bloqueó el autoplay, se necesitará un clic.", err);
+    });
+  });
+</script>
+
   </body>
 </html>
