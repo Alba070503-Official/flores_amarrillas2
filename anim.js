@@ -77,7 +77,7 @@ var lyricsData = [
 function updateLyrics() {
   var time = audio.currentTime; // ahora usamos decimales
   var currentLine = lyricsData.find(
-    (line) => time >= line.time && time < line.time + 2.5
+    (line) => time >= line.time && time < line.time + 2.8
   );
 
   if (currentLine) {
