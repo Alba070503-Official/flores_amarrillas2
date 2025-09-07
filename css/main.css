@@ -24,28 +24,27 @@ body {
   font-size: 28px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
+  font-weight: bold;
+  letter-spacing: 4px;
   position: absolute;
   margin-bottom: 20%;
   z-index: 1;
-  font-weight: bold;
-  letter-spacing: 4px;
 
-  border: 2px solid yellow; /* Borde amarillo de 2px */
-  padding: 5px; /* Opcional, para que el texto no toque el borde */
-  border-radius: 5px; /* Opcional, bordes redondeados */
+  /* Borde/sombra amarilla */
+  text-shadow:
+    -1px -1px 0 #FFD700,
+     1px -1px 0 #FFD700,
+    -1px  1px 0 #FFD700,
+     1px  1px 0 #FFD700;
 }
 
 @media only screen and (max-width: 600px) {
+  /* Estilos específicos para dispositivos con un ancho máximo de 600px */
   #lyrics {
-      font-size: 14px;
+      font-size: 14px; /* Reduce el tamaño del texto para dispositivos más pequeños */
       margin-bottom: 530px;
       letter-spacing: 3px;
-
-      border: 2px solid yellow; /* Mantener borde en dispositivos pequeños */
-      padding: 3px;
-      border-radius: 3px;
   }
-}
 
 }
 .titulo {
