@@ -355,15 +355,5 @@
     </div>
     <script src="anim.js"></script>
     <script src="main.js"></script>
-    <script>
-  const audio = document.getElementById('audio');
-  // Intentar reproducir el audio automáticamente (puede ser bloqueado)
-  audio.play().catch(() => {
-    // Si no se puede reproducir automáticamente, esperar a la interacción del usuario
-    document.body.addEventListener('click', () => {
-      audio.play();
-    }, { once: true });
-  });
-</script>
   </body>
 </html>
