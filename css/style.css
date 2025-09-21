@@ -21,42 +21,29 @@ body{
     font-size: 7rem;
     font-weight: 900;
     color: #ffffff; /* Color blanco para las letras */
-    text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Efecto glow amarillo */
+    animation: glow 2.5s ease-in-out infinite; /* Aplicando la animación de encendido/apagado */
 }
-.greetings > span{
-    animation: glow 2.5s ease-in-out infinite;
-}
+
 @keyframes glow{
     0%, 100%{
-        color: #ffffff; /* Mantiene la letra blanca */
-        text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Sombra amarilla */
+        color: #ffffff; /* Color blanco cuando está apagado */
+        text-shadow: none; /* Sin resplandor (apagado) */
     }
-    10%, 90%{
-        color: #ffffff; /* Mantiene la letra blanca */
-        text-shadow: none; /* Elimina la sombra en estas fases */
+    50%{
+        color: #FFEA00; /* Color amarillo cuando está "encendido" */
+        text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Resplandor amarillo */
     }
 }
-.greetings > span:nth-child(2){
-    animation-delay: .2s ;
-}
-.greetings > span:nth-child(3){
-    animation-delay: .4s ;
-}
-.greetings > span:nth-child(4){
-    animation-delay: .6s;
-}
-.greetings > span:nth-child(5){
-    animation-delay: .8s;
-}
-.greetings > span:nth-child(6){
-    animation-delay: 1s;
+
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
 }
 
 .description{
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #ffffff; /* Color blanco para las letras */
-    text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Efecto glow amarillo */
+    animation: glow 2.5s ease-in-out infinite; /* Aplicando la animación en la descripción */
 }
 
 .button a{
