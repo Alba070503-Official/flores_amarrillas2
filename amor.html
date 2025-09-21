@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje para mi Novia</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      overflow: hidden;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://qu.ax/XRWnK.jpg'); /* Aquí está la foto de fondo */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+      color: white;
+      text-align: center;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      border: 6px solid #ff99cc;
+      inset: 1rem;
+      z-index: 100;
+      pointer-events: none;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 153, 204, 0.5);
+    }
+
+    .message-box {
+      background-color: rgba(255, 255, 255, 0.85); /* Fondo color carta */
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      border: 2px solid #ff99cc;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Decoración de corazones */
+    .message-box::before, .message-box::after {
+      content: '❤️';
+      font-size: 3rem;
+      color: #ff3366;
+      position: absolute;
+    }
+
+    .message-box::before {
+      top: -30px;
+      left: 10px;
+    }
+
+    .message-box::after {
+      top: -30px;
+      right: 10px;
+    }
+
+    h1 {
+      font-family: 'Parisienne', cursive;
+      font-weight: 400;
+      font-size: 3rem;
+      color: #ff3366;
+      text-shadow: 0 0 10px rgba(255, 153, 204, 0.7);
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para el texto */
+    .message-box p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-family: 'Arial', sans-serif;
+      color: #444;
+      text-align: justify;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="message-box">
+    <h1>Para Ti, Mi Amor</h1>
+    <p>A veces no necesito grandes planes ni palabras, solo tu compañía. Contigo hasta los días normales se sienten diferentes y más tranquilos.</p>
+    <p>Me haces sentir especial cada día, y cada momento contigo es un regalo. Eres mi felicidad y mi mayor apoyo.</p>
+    <p>Te amo más de lo que las palabras pueden expresar. Gracias por estar en mi vida y hacerla más brillante.</p>
+  </div>
+
+</body>
+
+</html>
