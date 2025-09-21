@@ -17,33 +17,33 @@ body{
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
-.greetings{
+.greetings {
     font-size: 7rem;
     font-weight: 900;
     color: #ffffff; /* Color blanco para las letras */
-    animation: glow 2.5s ease-in-out infinite; /* Aplicando la animación de encendido/apagado */
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes glow{
-    0%, 100%{
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite; /* Animación para cada letra */
+}
+
+@keyframes glow {
+    0%, 100% {
         color: #ffffff; /* Color blanco cuando está apagado */
         text-shadow: none; /* Sin resplandor (apagado) */
     }
-    50%{
+    50% {
         color: #FFEA00; /* Color amarillo cuando está "encendido" */
         text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Resplandor amarillo */
     }
-}
-
-.greetings > span{
-    animation: glow 2.5s ease-in-out infinite;
 }
 
 .description{
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #ffffff; /* Color blanco para las letras */
-    animation: glow 2.5s ease-in-out infinite; /* Aplicando la animación en la descripción */
 }
 
 .button a{
