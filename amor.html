@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mensaje para mi Novia</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-
     * {
       margin: 0;
       padding: 0;
@@ -15,38 +13,39 @@
     }
 
     html, body {
-      overflow: hidden;
-      height: 100vh;
+      overflow-x: hidden;
+      height: 100%;
       font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    /* Imagen en la parte superior */
+    .image-container {
+      width: 100%;
+      height: 40vh; /* Controla la altura de la imagen */
       background-image: url('https://qu.ax/XRWnK.jpg'); /* Aquí está la foto de fondo */
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
-      color: white;
-      text-align: center;
+      background-attachment: fixed;
     }
 
-    body::before {
-      content: '';
-      position: absolute;
-      border: 6px solid #ff99cc;
-      inset: 1rem;
-      z-index: 100;
-      pointer-events: none;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 153, 204, 0.5);
-    }
-
+    /* Caja del mensaje */
     .message-box {
-      background-color: rgba(255, 255, 255, 0.85); /* Fondo color carta */
+      width: 100%;
       padding: 40px;
-      border-radius: 20px;
-      max-width: 600px;
-      width: 90%;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-      border: 2px solid #ff99cc;
+      background-color: rgba(255, 255, 255, 0.9); /* Fondo color carta */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       position: relative;
+      top: -30px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: auto;
       z-index: 10;
+      overflow-y: auto;
+      height: auto;
+      text-align: justify;
+      line-height: 1.6;
     }
 
     /* Decoración de corazones */
@@ -70,24 +69,44 @@
     h1 {
       font-family: 'Parisienne', cursive;
       font-weight: 400;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #ff3366;
-      text-shadow: 0 0 10px rgba(255, 153, 204, 0.7);
       margin-bottom: 20px;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(255, 153, 204, 0.7);
     }
 
     /* Estilo para el texto */
     .message-box p {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      font-size: 1.3rem;
+      line-height: 1.8;
       font-family: 'Arial', sans-serif;
       color: #444;
-      text-align: justify;
+      margin-bottom: 20px;
     }
 
     @keyframes fadeIn {
       to { opacity: 1; }
+    }
+
+    /* Ajustes responsivos */
+    @media (max-width: 600px) {
+      .image-container {
+        height: 30vh; /* Menor altura de la imagen en pantallas más pequeñas */
+      }
+
+      .message-box {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      h1 {
+        font-size: 2rem; /* Ajustar tamaño del título en pantallas pequeñas */
+      }
+
+      .message-box p {
+        font-size: 1rem; /* Ajustar tamaño del texto */
+      }
     }
 
   </style>
@@ -95,6 +114,10 @@
 
 <body>
 
+  <!-- Contenedor de la imagen en la parte superior -->
+  <div class="image-container"></div>
+
+  <!-- Caja del mensaje -->
   <div class="message-box">
     <h1>Para Ti, Mi Amor</h1>
     <p>A veces no necesito grandes planes ni palabras, solo tu compañía. Contigo hasta los días normales se sienten diferentes y más tranquilos.</p>
