@@ -5,13 +5,16 @@
 body{
     color: azure;
     width: 100%;
-    height: 82vh;
+    height: 100vh; /* Cambié 82vh por 100vh para cubrir toda la pantalla */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    /* padding-top: -30; */
+    background-image: url('https://qu.ax/ylznf.jpg'); /* Fondo con la imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 .botones{
@@ -29,7 +32,6 @@ body{
     -moz-border-radius: 80px;
     -ms-border-radius: 80px;
     -o-border-radius: 80px;
-
 }
 
 .botones a:focus{
