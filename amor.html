@@ -17,9 +17,10 @@
       font-family: 'Arial', sans-serif;
       background-color: #f0f0f0;
       color: #333;
+      overflow: hidden; /* Esconde el scroll cuando los corazones caen */
     }
 
-    /* Imagen en la parte superior */
+    /* Imagen completa en la parte superior */
     .image-container {
       width: 100%;
       height: 50vh; /* La imagen ocupará el 50% de la altura de la ventana */
@@ -46,35 +47,6 @@
       line-height: 1.6;
     }
 
-    /* Animación de los corazones */
-    .message-box::before, .message-box::after {
-      content: '❤️';
-      font-size: 3rem;
-      color: #ff3366;
-      position: absolute;
-      animation: heartbeat 1.5s ease-in-out infinite; /* Animación de latido */
-    }
-
-    .message-box::before {
-      top: -30px;
-      left: 10px;
-    }
-
-    .message-box::after {
-      top: -30px;
-      right: 10px;
-    }
-
-    /* Animación de latido (escala de corazón) */
-    @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2); /* Hace que el corazón se agrande y luego vuelva a su tamaño original */
-      }
-    }
-
     h1 {
       font-family: 'Parisienne', cursive;
       font-weight: 400;
@@ -94,8 +66,23 @@
       margin-bottom: 20px;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    /* Animación para la lluvia de corazones */
+    .heart {
+      position: absolute;
+      color: #ff3366;
+      font-size: 2rem;
+      animation: fall 3s infinite linear; /* Caída infinita */
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh); /* Hace que caigan hasta el fondo */
+        opacity: 0;
+      }
     }
 
     /* Ajustes responsivos para pantallas pequeñas */
@@ -133,6 +120,15 @@
     <p>Me haces sentir especial cada día, y cada momento contigo es un regalo. Eres mi felicidad y mi mayor apoyo.</p>
     <p>Te amo más de lo que las palabras pueden expresar. Gracias por estar en mi vida y hacerla más brillante.</p>
   </div>
+
+  <!-- Lluvia de corazones -->
+  <div class="heart" style="left: 10%; animation-duration: 2s;"></div>
+  <div class="heart" style="left: 30%; animation-duration: 2.5s;"></div>
+  <div class="heart" style="left: 50%; animation-duration: 3s;"></div>
+  <div class="heart" style="left: 70%; animation-duration: 2.8s;"></div>
+  <div class="heart" style="left: 90%; animation-duration: 3.2s;"></div>
+  <div class="heart" style="left: 20%; animation-duration: 2.3s;"></div>
+  <div class="heart" style="left: 60%; animation-duration: 2.7s;"></div>
 
 </body>
 
