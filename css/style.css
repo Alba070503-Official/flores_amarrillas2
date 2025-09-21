@@ -5,7 +5,7 @@
 body{
     color: azure;
     width: 100%;
-    height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
+    height: 100vh; /* Asegura que el fondo cubra toda la altura de la pantalla */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,41 +15,6 @@ body{
     background-position: center center; /* Centra la imagen */
     background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-.greetings {
-    font-size: 7rem;
-    font-weight: 900;
-    color: #ffffff; /* Color blanco para las letras */
-    display: flex;
-    justify-content: center;
-}
-
-.greetings > span {
-    animation: glow 2.5s ease-in-out infinite; /* Animación para cada letra */
-}
-
-@keyframes glow {
-    0%, 100% {
-        color: #ffffff; /* Color blanco cuando está apagado */
-        text-shadow: none; /* Sin resplandor (apagado) */
-    }
-    50% {
-        color: #FFEA00; /* Color amarillo cuando está "encendido" */
-        text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Resplandor amarillo */
-    }
-}
-
-.description{
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #ffffff; /* Color blanco para las letras */
-}
-
-.button a{
-    text-decoration: none;
-    font-size: 1rem;
-    color: #111;
 }
 
 .botones{
@@ -71,6 +36,52 @@ body{
 
 .botones a:focus{
     background-color: rgb(50, 194, 194);
+}
+
+/* Estilos para el texto "Hola" */
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
+}
+
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite; /* Animación aplicada a cada letra */
+}
+
+@keyframes glow{
+    0%, 100%{
+        color: #ffffff; /* Color blanco cuando está apagado */
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6; /* Resplandor azul como en el código original */
+    }
+    50%{
+        color: #FFEA00; /* Color amarillo cuando está "encendido" */
+        text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Resplandor amarillo */
+    }
+}
+
+/* Retardo para cada letra, para animarlas por separado */
+.greetings > span:nth-child(2){
+    animation-delay: .2s;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
 }
 
 @media screen and (max-width:574px){
