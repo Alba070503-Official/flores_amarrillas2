@@ -1,3 +1,4 @@
+/* Restante del código */
 *,
 *::after,
 *::before {
@@ -39,13 +40,13 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  /* Estilos específicos para dispositivos con un ancho máximo de 600px */
   #lyrics {
-    font-size: 14px;
-    margin-bottom: 530px;
-    letter-spacing: 3px;
+      font-size: 14px; /* Reduce el tamaño del texto para dispositivos más pequeños */
+      margin-bottom: 530px;
+      letter-spacing: 3px;
   }
 }
-
 .titulo {
   margin-bottom: 180px;
   font-family: "Arial Narrow", Arial, sans-serif;
@@ -57,7 +58,6 @@ body {
   animation: fadeIn 3s ease-in-out forwards;
   text-align: center;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -92,12 +92,39 @@ body {
       rgb(0, 0, 0) 19px,
       transparent 19px,
       transparent 22px
-    );
+    ),
+    repeating-linear-gradient(
+      189deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    repeating-linear-gradient(
+      148deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 19px,
+      transparent 19px,
+      transparent 22px
+    ),
+    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
 }
 
+/* Ajuste para las flores */
 .flowers {
   position: relative;
   transform: scale(0.9);
+  /* margin-bottom: 100px; */
+}
+
+@media only screen and (max-width: 600px) {
+  /* Estilos específicos para dispositivos con un ancho máximo de 600px */
+  .flowers {
+      font-size: 14px;
+      margin-bottom: 35%;
+      letter-spacing: 3px;
+      transform: scale(1.0);
+  }
 }
 
 .flower {
@@ -105,114 +132,91 @@ body {
   bottom: 10vmin;
   transform-origin: bottom center;
   z-index: 10;
-  background-image: url('img/sunflower-front.png'); /* Aquí se usa la imagen del girasol de frente */
-  background-size: cover;
-  background-position: center;
-  animation: flowerGrow 4s ease-in-out forwards, flowerMove 4s ease-in-out infinite; /* Animación de crecimiento y movimiento */
+  --fl-speed: 0.8s;
 }
 
-@keyframes flowerGrow {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes flowerMove {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
-}
-
+/* Animación de los pétalos */
 .flower--1 {
-  animation: moving-flower-1 4s linear infinite, flowerGrow 4s ease-in-out forwards;
+  -webkit-animation: moving-flower-1 4s linear infinite;
+  animation: moving-flower-1 4s linear infinite;
+}
+.flower--1 .flower__line {
+  height: 70vmin;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
-@keyframes moving-flower-1 {
-  0%,
-  100% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-}
-
-.flower--2 {
-  left: 50%;
-  transform: rotate(20deg);
-  animation: moving-flower-2 4s linear infinite, flowerGrow 4s ease-in-out forwards;
-}
-
-@keyframes moving-flower-2 {
-  0%,
-  100% {
-    transform: rotate(18deg);
-  }
-  50% {
-    transform: rotate(14deg);
-  }
-}
-
-.flower--3 {
-  left: 50%;
-  transform: rotate(-15deg);
-  animation: moving-flower-3 4s linear infinite, flowerGrow 4s ease-in-out forwards;
-}
-
-@keyframes moving-flower-3 {
-  0%,
-  100% {
-    transform: rotate(-18deg);
-  }
-  50% {
-    transform: rotate(-20deg) rotateY(-10deg);
-  }
-}
-
-.flower__leafs {
+/* Pétalos */
+.flower--1 .flower__leafs {
   position: relative;
-  animation: blooming-flower 2s forwards;
+  -webkit-animation: blooming-flower 2s backwards;
+  animation: blooming-flower 2s backwards;
 }
 
-.flower__leafs::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -100%);
-  width: 8vmin;
-  height: 8vmin;
-  background-color: #f9fd25;
-  filter: blur(10vmin);
-}
-
-.flower__leaf {
+.flower--1 .flower__leaf {
   position: absolute;
   bottom: 0;
   left: 50%;
   width: 8vmin;
   height: 11vmin;
-  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #fddd25;
+  border-radius: 50%;
+  background-color: #FFDA44; /* Color amarillo del girasol */
   transform-origin: bottom center;
   opacity: 0.9;
+  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
 }
 
-.flower__white-circle {
+.flower--1 .flower__leaf--1 {
+  transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
+}
+.flower--1 .flower__leaf--2 {
+  transform: translate(-50%, -4%) rotateX(40deg);
+}
+.flower--1 .flower__leaf--3 {
+  transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
+}
+
+.flower--1 .flower__white-circle {
   position: absolute;
   left: -3.5vmin;
   top: -3vmin;
   width: 9vmin;
   height: 4vmin;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #6B3E26; /* Centro marrón oscuro */
+}
+
+.flower__line__leaf {
+  --w: 7vmin;
+  --h: calc(var(--w) + 2vmin);
+  position: absolute;
+  top: 20%;
+  left: 90%;
+  width: var(--w);
+  height: var(--h);
+  border-top-right-radius: var(--h);
+  border-bottom-left-radius: var(--h);
+  background-image: linear-gradient(to top, rgba(20, 117, 122, 0.4), #5ed639);
+}
+
+.flower__line__leaf--1 {
+  transform: rotate(70deg) rotateY(30deg);
+}
+
+.flower__line__leaf--2 {
+  top: 45%;
+  transform: rotate(70deg) rotateY(30deg);
+}
+
+/* Animación de movimiento de la flor */
+@keyframes moving-flower-1 {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
 }
 
 @keyframes blooming-flower {
@@ -221,5 +225,44 @@ body {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/* Animación de luces de la flor */
+.flower__light {
+  position: absolute;
+  bottom: 0vmin;
+  width: 1vmin;
+  height: 1vmin;
+  background-color: rgb(255, 251, 0);
+  border-radius: 50%;
+  filter: blur(0.2vmin);
+  -webkit-animation: light-ans 4s linear infinite backwards;
+  animation: light-ans 4s linear infinite backwards;
+}
+
+/* Efecto de luz */
+@keyframes light-ans {
+  0% {
+    opacity: 0;
+    transform: translateY(0vmin);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(-5vmin) translateX(-2vmin);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-15vmin) translateX(2vmin);
+    filter: blur(0.2vmin);
+  }
+  75% {
+    transform: translateY(-20vmin) translateX(-2vmin);
+    filter: blur(0.2vmin);
+  }
+  100% {
+    transform: translateY(-30vmin);
+    opacity: 0;
+    filter: blur(1vmin);
   }
 }
