@@ -20,20 +20,20 @@ body{
 .greetings{
     font-size: 7rem;
     font-weight: 900;
-    color: #FFEA00; /* Color amarillo para las letras */
-    text-shadow: 0 0 12px #ffffff, 0 0 50px #ffffff, 0 0 100px #ffffff; /* Sombra blanca */
+    color: #ffffff; /* Color blanco para las letras */
+    text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Efecto glow amarillo */
 }
 .greetings > span{
     animation: glow 2.5s ease-in-out infinite;
 }
 @keyframes glow{
     0%, 100%{
-        color: #FFEA00; /* Asegura que el color amarillo se mantenga */
-        text-shadow: 0 0 12px #ffffff, 0 0 50px #ffffff, 0 0 100px #ffffff;
+        color: #ffffff; /* Mantiene la letra blanca */
+        text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Sombra amarilla */
     }
     10%, 90%{
-        color: #FFEA00; /* Mantén el color amarillo */
-        text-shadow: none;
+        color: #ffffff; /* Mantiene la letra blanca */
+        text-shadow: none; /* Elimina la sombra en estas fases */
     }
 }
 .greetings > span:nth-child(2){
@@ -55,8 +55,8 @@ body{
 .description{
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: #FFEA00; /* Color amarillo para las letras */
-    text-shadow: 0 0 12px #ffffff, 0 0 50px #ffffff, 0 0 100px #ffffff; /* Sombra blanca */
+    color: #ffffff; /* Color blanco para las letras */
+    text-shadow: 0 0 12px #FFEA00, 0 0 50px #FFEA00, 0 0 100px #FFEA00; /* Efecto glow amarillo */
 }
 
 .button a{
