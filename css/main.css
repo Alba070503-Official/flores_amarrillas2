@@ -92,22 +92,7 @@ body {
       rgb(0, 0, 0) 19px,
       transparent 19px,
       transparent 22px
-    ),
-    repeating-linear-gradient(
-      189deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px
-    ),
-    repeating-linear-gradient(
-      148deg,
-      rgb(0, 0, 0) 0px,
-      rgb(0, 0, 0) 19px,
-      transparent 19px,
-      transparent 22px
-    ),
-    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+    );
 }
 
 .flowers {
@@ -115,25 +100,15 @@ body {
   transform: scale(0.9);
 }
 
-@media only screen and (max-width: 600px) {
-  .flowers {
-    font-size: 14px;
-    margin-bottom: 35%;
-    letter-spacing: 3px;
-    transform: scale(1.0);
-  }
-}
-
 .flower {
   position: absolute;
   bottom: 10vmin;
   transform-origin: bottom center;
   z-index: 10;
-  --fl-speed: 0.8s;
-  background-image: url('img/sunflower-front.png'); /* Cambiar a girasol de frente */
+  background-image: url('img/sunflower-front.png'); /* Aquí se usa la imagen del girasol de frente */
   background-size: cover;
   background-position: center;
-  animation: flowerGrow 4s ease-in-out forwards; /* Animación de crecimiento */
+  animation: flowerGrow 4s ease-in-out forwards, flowerMove 4s ease-in-out infinite; /* Animación de crecimiento y movimiento */
 }
 
 @keyframes flowerGrow {
@@ -145,26 +120,20 @@ body {
   }
 }
 
+@keyframes flowerMove {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
 .flower--1 {
-  -webkit-animation: moving-flower-1 4s linear infinite;
-  animation: moving-flower-1 4s linear infinite;
+  animation: moving-flower-1 4s linear infinite, flowerGrow 4s ease-in-out forwards;
 }
 
-.flower--2 {
-  left: 50%;
-  transform: rotate(20deg);
-  -webkit-animation: moving-flower-2 4s linear infinite;
-  animation: moving-flower-2 4s linear infinite;
-}
-
-.flower--3 {
-  left: 50%;
-  transform: rotate(-15deg);
-  -webkit-animation: moving-flower-3 4s linear infinite;
-  animation: moving-flower-3 4s linear infinite;
-}
-
-/* Animaciones de movimiento */
 @keyframes moving-flower-1 {
   0%,
   100% {
@@ -173,6 +142,12 @@ body {
   50% {
     transform: rotate(-2deg);
   }
+}
+
+.flower--2 {
+  left: 50%;
+  transform: rotate(20deg);
+  animation: moving-flower-2 4s linear infinite, flowerGrow 4s ease-in-out forwards;
 }
 
 @keyframes moving-flower-2 {
@@ -185,6 +160,12 @@ body {
   }
 }
 
+.flower--3 {
+  left: 50%;
+  transform: rotate(-15deg);
+  animation: moving-flower-3 4s linear infinite, flowerGrow 4s ease-in-out forwards;
+}
+
 @keyframes moving-flower-3 {
   0%,
   100% {
@@ -195,31 +176,11 @@ body {
   }
 }
 
-/* Hojas de los girasoles */
 .flower__leafs {
   position: relative;
-  -webkit-animation: blooming-flower 2s backwards;
-  animation: blooming-flower 2s backwards;
+  animation: blooming-flower 2s forwards;
 }
 
-.flower__leafs--1 {
-  -webkit-animation-delay: 1.1s;
-  animation-delay: 1.1s;
-}
-.flower__leafs--2 {
-  -webkit-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-.flower__leafs--3 {
-  -webkit-animation-delay: 1.7s;
-  animation-delay: 1.7s;
-}
-.flower__leafs--4 {
-  -webkit-animation-delay: 2.1s;
-  animation-delay: 2.1s;
-}
-
-/* Efecto de expansión para el girasol */
 .flower__leafs::after {
   content: "";
   position: absolute;
@@ -242,7 +203,6 @@ body {
   background-color: #fddd25;
   transform-origin: bottom center;
   opacity: 0.9;
-  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
 }
 
 .flower__white-circle {
