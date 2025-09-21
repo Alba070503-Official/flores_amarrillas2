@@ -5,7 +5,7 @@
 body{
     color: azure;
     width: 100%;
-    height: 100vh; /* Cambié 82vh por 100vh para cubrir toda la pantalla */
+    height: 100vh; /* Asegura que cubra toda la altura de la pantalla */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,41 +17,22 @@ body{
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
-.botones{
-    padding: 9px;
-    border-radius: 80px;
-    background-color: transparent;
-    border: none;
-}
-
-.botones a{
-    background-color: #0a2be9;
-    padding: 9px;
-    border-radius: 80px;
-    -webkit-border-radius: 80px;
-    -moz-border-radius: 80px;
-    -ms-border-radius: 80px;
-    -o-border-radius: 80px;
-}
-
-.botones a:focus{
-    background-color: rgb(50, 194, 194);
-}
-
 .greetings{
     font-size: 7rem;
     font-weight: 900;
+    color: #FFEA00; /* Color amarillo para las letras */
+    text-shadow: 0 0 12px #ffffff, 0 0 50px #ffffff, 0 0 100px #ffffff; /* Sombra blanca */
 }
 .greetings > span{
     animation: glow 2.5s ease-in-out infinite;
 }
 @keyframes glow{
     0%, 100%{
-        color: #fff;
-        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+        color: #FFEA00; /* Asegura que el color amarillo se mantenga */
+        text-shadow: 0 0 12px #ffffff, 0 0 50px #ffffff, 0 0 100px #ffffff;
     }
     10%, 90%{
-        color: #111;
+        color: #FFEA00; /* Mantén el color amarillo */
         text-shadow: none;
     }
 }
@@ -74,12 +55,35 @@ body{
 .description{
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #FFEA00; /* Color amarillo para las letras */
+    text-shadow: 0 0 12px #ffffff, 0 0 50px #ffffff, 0 0 100px #ffffff; /* Sombra blanca */
 }
 
 .button a{
     text-decoration: none;
     font-size: 1rem;
     color: #111;
+}
+
+.botones{
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+}
+
+.botones a{
+    background-color: #0a2be9;
+    padding: 9px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+}
+
+.botones a:focus{
+    background-color: rgb(50, 194, 194);
 }
 
 @media screen and (max-width:574px){
