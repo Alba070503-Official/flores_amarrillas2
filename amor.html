@@ -13,7 +13,6 @@
     }
 
     html, body {
-      overflow-x: hidden;
       height: 100%;
       font-family: 'Arial', sans-serif;
       background-color: #f0f0f0;
@@ -23,8 +22,8 @@
     /* Imagen en la parte superior */
     .image-container {
       width: 100%;
-      height: 40vh; /* Controla la altura de la imagen */
-      background-image: url('https://qu.ax/XRWnK.jpg'); /* Aquí está la foto de fondo */
+      height: 50vh; /* La imagen ocupará el 50% de la altura de la ventana */
+      background-image: url('https://qu.ax/XRWnK.jpg'); /* Foto proporcionada */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -32,9 +31,8 @@
 
     /* Caja del mensaje */
     .message-box {
-      width: 100%;
       padding: 40px;
-      background-color: rgba(255, 255, 255, 0.9); /* Fondo color carta */
+      background-color: rgba(255, 255, 255, 0.85); /* Fondo color carta */
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       position: relative;
       top: -30px;
@@ -48,12 +46,13 @@
       line-height: 1.6;
     }
 
-    /* Decoración de corazones */
+    /* Animación de los corazones */
     .message-box::before, .message-box::after {
       content: '❤️';
       font-size: 3rem;
       color: #ff3366;
       position: absolute;
+      animation: heartbeat 1.5s ease-in-out infinite; /* Animación de latido */
     }
 
     .message-box::before {
@@ -64,6 +63,16 @@
     .message-box::after {
       top: -30px;
       right: 10px;
+    }
+
+    /* Animación de latido (escala de corazón) */
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2); /* Hace que el corazón se agrande y luego vuelva a su tamaño original */
+      }
     }
 
     h1 {
@@ -89,10 +98,10 @@
       to { opacity: 1; }
     }
 
-    /* Ajustes responsivos */
+    /* Ajustes responsivos para pantallas pequeñas */
     @media (max-width: 600px) {
       .image-container {
-        height: 30vh; /* Menor altura de la imagen en pantallas más pequeñas */
+        height: 30vh; /* Imagen más pequeña en pantallas móviles */
       }
 
       .message-box {
@@ -101,11 +110,11 @@
       }
 
       h1 {
-        font-size: 2rem; /* Ajustar tamaño del título en pantallas pequeñas */
+        font-size: 2rem; /* Ajuste del tamaño del título */
       }
 
       .message-box p {
-        font-size: 1rem; /* Ajustar tamaño del texto */
+        font-size: 1rem; /* Ajuste del tamaño del texto */
       }
     }
 
